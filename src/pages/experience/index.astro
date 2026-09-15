@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { experience } from '../../data/experience';
+import { education, additionalLearning } from '../../data/education';
+---
+
+<BaseLayout
+  title="Experience"
+  description="Work experience and education of Gabriel Reynoso Romero."
+>
+  <h1 class="page-heading">Experience &amp; Education</h1>
+  <p class="lede page-subtitle">
+    My path through engineering, data science, and business, shaped by hands-on experience.
+  </p>
+
+  <div class="tabs" data-tabs>
+    <div class="tabs__list" role="tablist" aria-label="Experience and education">
+      <button
+        type="button"
+        id="tab-experience"
+        class="tabs__tab"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-experience"
+        tabindex="0"
+      >
+        Experience
+      </button>
+      <button
+        type="button"
+        id="tab-education"
+        class="tabs__tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-education"
+        tabindex="-1"
+      >
+        Education
+      </button>
+    </div>
+
+    <div id="panel-experience" class="tabs__panel" role="tabpanel" aria-labelledby="tab-experience" tabindex="0">
+      {
+        experience.map((job) => (
+          <article class="tab-card">
+            <div class="tab-card__header">
+              <div>
+                <h3 class="tab-card__title">{job.role}</h3>
+                <p class="tab-card__subtitle">{job.company}</p>
+              </div>
+              <div class="tab-card__meta">
+                <p class="tab-card__dates">
+                  {job.start} – {job.end}
+                </p>
+                <p class="tab-card__location">{job.location}</p>
+              </div>
+            </div>
+            <ul class="tab-card__list">
+              {job.highlights.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+            {job.skills && job.skills.length > 0 && (
+              <ul class="tag-list">
+                {job.skills.map((skill) => (
+                  <li class="tag">{skill}</li>
+                ))}
+              </ul>
+            )}
+          </article>
+        ))
+      }
+    </div>
+
+    <div id="panel-education" class="tabs__panel" role="tabpanel" aria-labelledby="tab-education" tabindex="0" hidden>
+      {
+        education.map((entry) => (
+          <article class="tab-card">
+            <div class="tab-card__header">
+              <div>
+                <h3 class="tab-card__title">{entry.degree}</h3>
+                <p class="tab-card__subtitle">{entry.institution}</p>
+              </div>
+              <div class="tab-card__meta">
+                <p class="tab-card__dates">
+                  {entry.start} – {entry.end}
+                </p>
+                <p class="tab-card__location">{entry.location}</p>
+              </div>
+            </div>
+            {(entry.gpa || entry.honors) && (
+              <p class="tab-card__summary">
+                {[entry.gpa && `GPA ${entry.gpa}`, entry.honors].filter(Boolean).join(' · ')}
+              </p>
+            )}
+            {entry.detail && <p class="tab-card__summary">{entry.detail}</p>}
+            {entry.coursework && entry.coursework.length > 0 && (
+              <>
+                <p class="tab-card__label">Relevant coursework</p>
+                <ul class="tag-list">
+                  {entry.coursework.map((course) => (
+                    <li class="tag">{course}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </article>
+        ))
+      }
+
+      {additionalLearning.length > 0 && (
+        <>
+          <h2>Additional Learning</h2>
+          {additionalLearning.map((item) => (
+            <article class="tab-card">
+              <h3 class="tab-card__title">{item.title}</h3>
+              <p class="tab-card__subtitle">{item.provider}</p>
+              <p class="tab-card__summary">{item.description}</p>
+              <p>
+                <a class="button" href={item.url} target="_blank" rel="noopener">
+                  {item.linkLabel}
+                </a>
+              </p>
+            </article>
+          ))}
+        </>
+      )}
+    </div>
+  </div>
+
+  <script>
+    const tabList = document.querySelector<HTMLElement>('[data-tabs] [role="tablist"]');
+    if (tabList) {
+      const tabs = Array.from(tabList.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
+      const panels = tabs.map((tab) => document.getElementById(tab.getAttribute('aria-controls') ?? ''));
+
+      const activateTab = (tab: HTMLButtonElement, focus = true) => {
+        tabs.forEach((t) => {
+          const selected = t === tab;
+          t.setAttribute('aria-selected', String(selected));
+          t.tabIndex = selected ? 0 : -1;
+        });
+        panels.forEach((panel) => {
+          if (!panel) return;
+          panel.hidden = panel.getAttribute('aria-labelledby') !== tab.id;
+        });
+        if (focus) tab.focus();
+      };
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => activateTab(tab, false));
+        tab.addEventListener('keydown', (event) => {
+          let newIndex: number | null = null;
+          if (event.key === 'ArrowRight') newIndex = (index + 1) % tabs.length;
+          else if (event.key === 'ArrowLeft') newIndex = (index - 1 + tabs.length) % tabs.length;
+          else if (event.key === 'Home') newIndex = 0;
+          else if (event.key === 'End') newIndex = tabs.length - 1;
+
+          if (newIndex !== null) {
+            event.preventDefault();
+            activateTab(tabs[newIndex]);
+          }
+        });
+      });
+    }
+  </script>
+</BaseLayout>

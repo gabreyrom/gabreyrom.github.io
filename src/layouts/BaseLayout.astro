@@ -1,0 +1,73 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const pageTitle = title === site.name ? title : `${title} — ${site.name}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content={site.name} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-header__name" href="/">{site.name}</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>About</a>
+          <a
+            href="/experience/"
+            aria-current={Astro.url.pathname.startsWith('/experience') ? 'page' : undefined}
+            >Experience</a
+          >
+          <a
+            href="/projects/"
+            aria-current={Astro.url.pathname.startsWith('/projects') ? 'page' : undefined}
+            >Projects</a
+          >
+          <a class="button" href={site.cvPath} target="_blank" rel="noopener">Download CV</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>© {new Date().getFullYear()} {site.name}</p>
+        <ul class="footer-links">
+          <li><a href={`mailto:${site.email}`}>Email</a></li>
+          <li><a href={site.github} target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href={site.linkedin} target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
