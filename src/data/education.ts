@@ -1,14 +1,12 @@
 export type EducationEntry = {
   degree: string;
   institution: string;
-  location: string;
   start: string;
-  end: string;
-  inProgress: boolean;
+  end?: string;
   gpa?: string;
-  honors?: string;
-  detail?: string;
-  coursework?: string[];
+  distinction?: string;
+  description: string;
+  coursework: string[];
 };
 
 export type AdditionalLearningEntry = {
@@ -34,38 +32,58 @@ export const education: EducationEntry[] = [
   {
     degree: 'Master of Science in Data Science',
     institution: 'Stevens Institute of Technology',
-    location: 'Hoboken, New Jersey',
-    start: 'Aug 2025',
+    start: 'Sep 2025',
     end: 'Expected Dec 2026',
-    inProgress: true,
-    gpa: '4.0/4.0',
+    gpa: '4.0 / 4.0',
+    description:
+      'Graduate study focused on machine learning, statistical methods, optimization, and the mathematical foundations of data science.',
     coursework: [
-      'Deep Learning',
-      'Generative AI',
       'Applied Machine Learning',
-      'Time Series Analysis',
-      'Optimization for Data Science',
+      'Deep Learning',
+      'Augmented Intelligence & Generative AI',
       'Statistical Methods',
+      'Probability Theory',
+      'Numerical Linear Algebra',
+      'Python Programming',
+      'Foundational Mathematics for Data Science',
     ],
   },
   {
     degree: 'B.S. in Mechatronics Engineering',
     institution: 'Instituto Tecnológico Autónomo de México (ITAM)',
-    location: 'Mexico City, Mexico',
-    start: 'Aug 2014',
-    end: 'Jun 2019',
-    inProgress: false,
-    gpa: '9.53/10',
-    honors: 'Graduated with honors',
+    start: '2020',
+    gpa: '9.53 / 10',
+    distinction: 'Honorary Mention · Top 0.78% of entering cohort',
+    description:
+      'An engineering foundation spanning intelligent systems, robotics, control, computation, and applied mathematics.',
+    coursework: [
+      'Artificial Intelligence',
+      'Robotics',
+      'Control Theory',
+      'Digital Signal Processing',
+      'Dynamical Systems',
+      'Numerical Methods',
+      'Modeling & Optimization',
+      'Computer Networks',
+    ],
   },
   {
     degree: 'B.S. in Industrial Engineering',
     institution: 'Instituto Tecnológico Autónomo de México (ITAM)',
-    location: 'Mexico City, Mexico',
-    start: 'Aug 2014',
-    end: 'Jun 2019',
-    inProgress: false,
-    gpa: '9.49/10',
-    honors: 'Graduated with honors',
+    start: '2020',
+    gpa: '9.49 / 10',
+    distinction: 'Special Mention · Top 0.91% of entering cohort',
+    description:
+      'Training in analytical decision-making, optimization, operations, and the design of business and production systems.',
+    coursework: [
+      'Probability',
+      'Statistical Inference',
+      'Systems Simulation',
+      'Modeling & Optimization',
+      'Production Planning & Control',
+      'Quality Engineering',
+      'Logistics & Distribution',
+      'Financial Management',
+    ],
   },
 ];

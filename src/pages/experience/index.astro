@@ -83,20 +83,16 @@ import { education, additionalLearning } from '../../data/education';
               </div>
               <div class="tab-card__meta">
                 <p class="tab-card__dates">
-                  {entry.start} – {entry.end}
+                  {entry.end ? `${entry.start} – ${entry.end}` : entry.start}
                 </p>
-                <p class="tab-card__location">{entry.location}</p>
+                {entry.gpa && <p class="tab-card__location">GPA {entry.gpa}</p>}
+                {entry.distinction && <p class="tab-card__location">{entry.distinction}</p>}
               </div>
             </div>
-            {(entry.gpa || entry.honors) && (
-              <p class="tab-card__summary">
-                {[entry.gpa && `GPA ${entry.gpa}`, entry.honors].filter(Boolean).join(' · ')}
-              </p>
-            )}
-            {entry.detail && <p class="tab-card__summary">{entry.detail}</p>}
-            {entry.coursework && entry.coursework.length > 0 && (
+            <p class="tab-card__summary">{entry.description}</p>
+            {entry.coursework.length > 0 && (
               <>
-                <p class="tab-card__label">Relevant coursework</p>
+                <p class="tab-card__label">Selected coursework</p>
                 <ul class="tag-list">
                   {entry.coursework.map((course) => (
                     <li class="tag">{course}</li>
