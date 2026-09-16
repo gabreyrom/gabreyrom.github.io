@@ -8,5 +8,5 @@ export const site = {
   github: 'https://github.com/gabreyrom',
   linkedin: 'https://www.linkedin.com/in/gabrielreynosorom/',
   cvPath: '/cv/Gabriel_Reynoso_Resume.pdf',
-  siteUrl: 'https://gabreyrom.github.io',
+  siteUrl: 'https://gabrielreynosoromero.com',
 };

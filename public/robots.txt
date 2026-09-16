@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gabreyrom.github.io/sitemap-index.xml
+Sitemap: https://gabrielreynosoromero.com/sitemap-index.xml
