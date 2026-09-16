@@ -46,6 +46,10 @@ export const education: EducationEntry[] = [
       'Numerical Linear Algebra',
       'Python Programming',
       'Foundational Mathematics for Data Science',
+      'Time Series Analysis',
+      'Big Data Analytics',
+      'Optimization',
+      'Data Integration for BI&A',
     ],
   },
   {
