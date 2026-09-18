@@ -2,9 +2,9 @@ export const aboutIntro =
   'I combine a foundation in engineering, mathematics, and data science with hands-on experience guiding growth, product, and customer decisions.';
 
 export const aboutBiography: string[] = [
-  'At Klar, I led a team of six analysts working on referrals, customer engagement, and lifetime value. Earlier roles at Ben & Frank and Ford gave me experience building data pipelines, automating processes, and developing analytics tools for business teams.',
-  "I hold degrees in Mechatronics Engineering and Industrial Engineering from ITAM and am currently completing an MS in Data Science at Stevens Institute of Technology. I'm especially interested in how customer behavior, experimentation, and machine learning can inform product and commercial decisions.",
-  "Outside work, I'm an avid reader and sports enthusiast. I'm curious by nature and enjoy exploring new ideas, both within data science and beyond it.",
+  'I have led analytics teams within Growth and Marketing at a leading Mexican fintech, owning customer engagement and lifetime-value initiatives. My work combines product experimentation with causal-inference principles to understand what drives customer behavior and inform growth decisions.',
+  'Earlier roles in retail and automotive strengthened both my analytical and technical foundation: building the data infrastructure, automating processes, and developing the tools that enable reliable business analysis from the ground up. I hold degrees in Mechatronics Engineering and Industrial Engineering from ITAM in Mexico and am currently completing an MS in Data Science at Stevens Institute of Technology in the United States.',
+  'Outside work, I am an avid reader and sports enthusiast. I am highly curious by nature and enjoy exploring new ideas, discussing them thoughtfully, and continuing to learn.',
 ];
 
 export const technicalToolkit: string[] = [
