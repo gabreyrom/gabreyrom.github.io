@@ -30,7 +30,7 @@ export const additionalLearning: AdditionalLearningEntry[] = [
 
 export const education: EducationEntry[] = [
   {
-    degree: 'Master of Science in Data Science',
+    degree: 'M.S. in Data Science',
     institution: 'Stevens Institute of Technology',
     start: 'Sep 2025',
     end: 'Expected Dec 2026',
