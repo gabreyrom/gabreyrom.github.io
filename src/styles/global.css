@@ -657,6 +657,70 @@ main {
   margin-top: 1rem;
 }
 
+.company-card__roles {
+  margin-top: 1.25rem;
+}
+
+.company-card__toggle {
+  display: inline-block;
+  list-style: none;
+  cursor: pointer;
+  color: var(--color-accent-dark);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.company-card__toggle::-webkit-details-marker {
+  display: none;
+}
+
+.company-card__toggle:hover {
+  color: var(--color-accent);
+}
+
+.company-card__toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.company-card__toggle-open,
+.company-card__roles[open] .company-card__toggle-closed {
+  display: none;
+}
+
+.company-card__roles[open] .company-card__toggle-open {
+  display: inline;
+}
+
+.role {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.role__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+}
+
+.role__title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.role__dates {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
 @media (max-width: 40rem) {
   .tab-card__header {
     flex-direction: column;

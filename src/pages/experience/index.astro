@@ -41,34 +41,84 @@ import { education, additionalLearning } from '../../data/education';
 
     <div id="panel-experience" class="tabs__panel" role="tabpanel" aria-labelledby="tab-experience" tabindex="0">
       {
-        experience.map((job) => (
-          <article class="tab-card">
-            <div class="tab-card__header">
-              <div>
-                <h3 class="tab-card__title">{job.role}</h3>
-                <p class="tab-card__subtitle">{job.company}</p>
+        experience.map((job) =>
+          job.roles.length > 1 ? (
+            <article class="tab-card company-card">
+              <div class="tab-card__header">
+                <div>
+                  <h3 class="tab-card__title">{job.company}</h3>
+                </div>
+                <div class="tab-card__meta">
+                  <p class="tab-card__dates">
+                    {job.start} – {job.end}
+                  </p>
+                  <p class="tab-card__location">{job.location}</p>
+                </div>
               </div>
-              <div class="tab-card__meta">
-                <p class="tab-card__dates">
-                  {job.start} – {job.end}
-                </p>
-                <p class="tab-card__location">{job.location}</p>
-              </div>
-            </div>
-            <ul class="tab-card__list">
-              {job.highlights.map((point) => (
-                <li>{point}</li>
-              ))}
-            </ul>
-            {job.skills && job.skills.length > 0 && (
-              <ul class="tag-list">
-                {job.skills.map((skill) => (
-                  <li class="tag">{skill}</li>
+              {job.summary && <p class="tab-card__summary">{job.summary}</p>}
+              {job.highlights && job.highlights.length > 0 && (
+                <ul class="tab-card__list">
+                  {job.highlights.map((point) => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+              )}
+              <details class="company-card__roles">
+                <summary class="company-card__toggle">
+                  <span class="company-card__toggle-closed">View {job.roles.length} roles</span>
+                  <span class="company-card__toggle-open">Hide roles</span>
+                </summary>
+                {job.roles.map((role) => (
+                  <section class="role">
+                    <div class="role__header">
+                      <h4 class="role__title">{role.title}</h4>
+                      <p class="role__dates">
+                        {role.start} – {role.end}
+                      </p>
+                    </div>
+                    <ul class="tab-card__list">
+                      {role.highlights.map((point) => (
+                        <li>{point}</li>
+                      ))}
+                    </ul>
+                    <ul class="tag-list">
+                      {role.tags.map((tag) => (
+                        <li class="tag">{tag}</li>
+                      ))}
+                    </ul>
+                  </section>
                 ))}
-              </ul>
-            )}
-          </article>
-        ))
+              </details>
+            </article>
+          ) : (
+            job.roles.map((role) => (
+              <article class="tab-card">
+                <div class="tab-card__header">
+                  <div>
+                    <h3 class="tab-card__title">{role.title}</h3>
+                    <p class="tab-card__subtitle">{job.company}</p>
+                  </div>
+                  <div class="tab-card__meta">
+                    <p class="tab-card__dates">
+                      {role.start} – {role.end}
+                    </p>
+                    <p class="tab-card__location">{job.location}</p>
+                  </div>
+                </div>
+                <ul class="tab-card__list">
+                  {role.highlights.map((point) => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+                <ul class="tag-list">
+                  {role.tags.map((tag) => (
+                    <li class="tag">{tag}</li>
+                  ))}
+                </ul>
+              </article>
+            ))
+          )
+        )
       }
     </div>
 

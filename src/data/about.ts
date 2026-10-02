@@ -1,23 +1,24 @@
 export const aboutIntro =
-  'I combine a foundation in engineering, mathematics, and data science with hands-on experience guiding growth, product, and customer decisions.';
+  'I combine business, customer, and product analytics with data and analytics engineering experience to turn business questions into reliable data products, experiments, and predictive models that support actionable decisions.';
 
 export const aboutBiography: string[] = [
-  'I have led analytics teams within Growth and Marketing at a leading Mexican fintech, owning customer engagement and lifetime-value initiatives. My work combines product experimentation with causal-inference principles to understand what drives customer behavior and inform growth decisions.',
-  'Earlier roles in retail and automotive strengthened both my analytical and technical foundation: building the data infrastructure, automating processes, and developing the tools that enable reliable business analysis from the ground up. I hold degrees in Mechatronics Engineering and Industrial Engineering from ITAM in Mexico and am currently completing an MS in Data Science at Stevens Institute of Technology in the United States.',
-  'Outside work, I am an avid reader and sports enthusiast. I am highly curious by nature and enjoy exploring new ideas, discussing them thoughtfully, and continuing to learn.',
+  'Across fintech, retail, and automotive, I have built analytical foundations from the ground up: data warehouses and models, automated pipelines, customer funnels, LTV frameworks, attribution systems, and decision tools for Growth, Product, Finance, Operations, and leadership teams.',
+  'In fintech, I led analytics teams across Customer Engagement, Referral, lifetime value, and Savings. My work combined experimentation, causal inference, predictive modeling, and analytics engineering to improve acquisition efficiency, customer value, and product decisions.',
+  'I hold degrees in Mechatronics Engineering and Industrial Engineering from ITAM in Mexico and am currently completing an MS in Data Science at Stevens Institute of Technology in the United States. Outside work, I am an avid reader and sports enthusiast who enjoys exploring new ideas, discussing them thoughtfully, and continuing to learn.',
 ];
 
 export const technicalToolkit: string[] = [
   'Python',
   'SQL',
-  'R',
-  'scikit-learn',
-  'TensorFlow',
-  'AWS',
+  'dbt',
+  'Redshift',
   'BigQuery',
-  'Git',
-  'Claude Code',
-  'Google Antigravity',
+  'AWS',
+  'Apache Airflow',
+  'Apache Spark',
+  'Causal Inference',
+  'Machine Learning',
+  'LLM-Assisted Development',
 ];
 
 export type ExpertiseArea = {
@@ -29,16 +30,16 @@ export const expertiseAreas: ExpertiseArea[] = [
   {
     title: 'Growth, Product & Customer Analytics',
     description:
-      'Understanding acquisition, engagement, and lifetime value through funnel analysis, experimentation, and customer insights.',
+      'Using acquisition, activation, engagement, and lifetime-value analysis to guide customer, product, and commercial decisions.',
   },
   {
-    title: 'Applied Machine Learning',
+    title: 'Experimentation, Causal Inference & ML',
     description:
-      'Developing predictive models and simulations, with attention to evaluation, uncertainty, and the decisions they support.',
+      'Designing experiments, evaluating causal effects, and building predictive models that support targeted and measurable decisions.',
   },
   {
-    title: 'Data Engineering & Automation',
+    title: 'Data & Analytics Engineering',
     description:
-      'Building data pipelines, integrating business data, and automating workflows that make analysis useful in everyday operations.',
+      'Building reliable data models, pipelines, warehouse workflows, and measurement systems that make analytics useful in everyday operations.',
   },
 ];

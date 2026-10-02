@@ -1,9 +1,10 @@
 export const site = {
   name: 'Gabriel Reynoso Romero',
   heading: "Hi, I'm Gabriel Reynoso",
-  subtitle: 'Data Scientist | Growth, Product & Customer Analytics',
+  subtitle:
+    'Data Scientist | Growth, Product & Customer Analytics | Data & Analytics Engineering',
   intro:
-    'I combine business judgment with technical depth to understand customers, evaluate what works, and build data solutions that support better product and growth decisions.',
+    'I turn business questions into reliable data products, experiments, and predictive models that guide growth, product, and customer decisions.',
   email: 'gabo.reyno@gmail.com',
   github: 'https://github.com/gabreyrom',
   linkedin: 'https://www.linkedin.com/in/gabrielreynosorom/',
