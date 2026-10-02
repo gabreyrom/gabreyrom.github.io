@@ -27,8 +27,8 @@ export const experience: ExperienceCompany[] = [
     summary:
       'Four promotions across Growth and Marketing, progressing from customer engagement analytics into team leadership, product ownership, experimentation, and data infrastructure.',
     highlights: [
-      '31.5K monthly referral-sourced account activations at US$1.80 CAC versus US$6 to US$8 through paid channels.',
-      'Increased three-month LTV per acquired user from US$15 to US$37 through funnel and Savings-adoption optimization.',
+      'Averaged 31.5K monthly referral-sourced account activations at approximately 25% of paid-channel CAC.',
+      'Helped increase three-month LTV per acquired user by 144% through funnel and Savings-adoption optimization.',
       'Led analysts and Analytics Engineers supporting Referral, Customer Engagement, LTV, and Savings.',
     ],
     roles: [
