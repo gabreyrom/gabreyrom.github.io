@@ -6,7 +6,7 @@ technologies: ["Mechatronics Engineering", "Industrial Engineering", "Teleoperat
 repoUrl: "https://github.com/gabreyrom/TesisMecatronica"
 highlights:
   - "Best Thesis Award — XXVI Premio de Investigación ExITAM, 2021"
-featured: true
+featured: false
 order: 5
 draft: false
 ---

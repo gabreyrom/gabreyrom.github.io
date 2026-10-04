@@ -9,6 +9,7 @@ interface Props {
 
 const { title, description } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialPreviewURL = new URL('/social-preview.png', Astro.site);
 const pageTitle = title === site.name ? title : `${title} — ${site.name}`;
 ---
 
@@ -28,9 +29,14 @@ const pageTitle = title === site.name ? title : `${title} — ${site.name}`;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:site_name" content={site.name} />
+    <meta property="og:image" content={socialPreviewURL} />
+    <meta property="og:image:width" content="1733" />
+    <meta property="og:image:height" content="907" />
+    <meta property="og:image:alt" content="Gabriel Reynoso Romero" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialPreviewURL} />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>

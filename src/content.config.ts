@@ -4,7 +4,7 @@ import { glob } from 'astro/loaders';
 // Projects page (/projects/) supports up to nine published entries, ordered by `order`.
 // To add a project:
 //   1. Create a new .md file here with the fields below.
-//   2. Set `order` to the next open slot (currently 1-5 are in use; 6-9 are free).
+//   2. Set `order` to the next open slot (currently 1-6 are in use; 7-9 are free).
 //   3. Leave `draft: true` until it's ready to publish; the Projects page and homepage
 //      "Featured Projects" both skip drafts automatically.
 //   4. Set `featured: true` only if it should also replace one of the homepage's three
