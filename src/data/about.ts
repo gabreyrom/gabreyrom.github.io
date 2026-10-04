@@ -1,5 +1,5 @@
 export const aboutIntro =
-  'I combine business, customer, and product analytics with data and analytics engineering experience to turn business questions into reliable data products, experiments, and predictive models that support actionable decisions.';
+  'My background brings together business analytics, experimentation, and data engineering. I enjoy understanding a problem and building what’s needed to answer it.';
 
 export const aboutBiography: string[] = [
   'Across fintech, retail, and automotive, I have built analytical foundations from the ground up: data warehouses and models, automated pipelines, customer funnels, LTV frameworks, attribution systems, and decision tools for Growth, Product, Finance, Operations, and leadership teams.',
