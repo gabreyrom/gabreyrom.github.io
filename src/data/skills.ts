@@ -1,12 +1,14 @@
 export type SkillCategory = {
   name: string;
   tools: string[];
+  /** Tools known through coursework and projects rather than professional use; listed under a separate label. */
+  academic?: string[];
 };
 
 export const skillCategories: SkillCategory[] = [
   {
-    name: 'Programming & Data Analysis',
-    tools: ['Python', 'SQL', 'R', 'pandas', 'NumPy'],
+    name: 'Programming, Analysis & Visualization',
+    tools: ['Python', 'SQL', 'R', 'pandas', 'NumPy', 'Power BI', 'Tableau', 'Dash'],
   },
   {
     name: 'Experimentation, Causal Inference & ML',
@@ -18,9 +20,9 @@ export const skillCategories: SkillCategory[] = [
       'Forecasting',
       'scikit-learn',
       'LightGBM',
-      'TensorFlow',
       'Simulation',
     ],
+    academic: ['TensorFlow', 'PyTorch', 'Keras'],
   },
   {
     name: 'Data & Analytics Engineering',
@@ -29,15 +31,18 @@ export const skillCategories: SkillCategory[] = [
       'AWS Glue',
       'AWS Lambda',
       'Apache Airflow',
-      'Apache Spark',
+      'Apache Spark / PySpark',
       'Redshift',
+      'PostgreSQL',
       'BigQuery',
       'Amazon S3',
       'Apache Iceberg',
+      'Git',
+      'Jenkins',
     ],
   },
   {
     name: 'AI-Assisted Development',
-    tools: ['Claude Code', 'Google Antigravity', 'LLM-Assisted Workflows'],
+    tools: ['Claude Code', 'Codex', 'Google Antigravity', 'LLM-Assisted Workflows'],
   },
 ];

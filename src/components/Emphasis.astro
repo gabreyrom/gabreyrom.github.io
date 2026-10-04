@@ -1,0 +1,14 @@
+---
+// Renders a plain string, turning explicit **bold** markers into <strong>.
+// All text is output through normal Astro expressions, so it stays escaped;
+// no other markup is interpreted.
+export interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+// Splitting on a capture group alternates plain (even) and bold (odd) segments.
+const segments = text.split(/\*\*(.+?)\*\*/g);
+---
+
+{segments.map((segment, index) => (index % 2 === 1 ? <strong>{segment}</strong> : segment))}

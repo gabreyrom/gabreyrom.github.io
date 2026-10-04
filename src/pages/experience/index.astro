@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Emphasis from '../../components/Emphasis.astro';
 import { experience } from '../../data/experience';
 import { education, additionalLearning } from '../../data/education';
 ---
@@ -59,7 +60,7 @@ import { education, additionalLearning } from '../../data/education';
               {job.highlights && job.highlights.length > 0 && (
                 <ul class="tab-card__list">
                   {job.highlights.map((point) => (
-                    <li>{point}</li>
+                    <li><Emphasis text={point} /></li>
                   ))}
                 </ul>
               )}
@@ -78,7 +79,7 @@ import { education, additionalLearning } from '../../data/education';
                     </div>
                     <ul class="tab-card__list">
                       {role.highlights.map((point) => (
-                        <li>{point}</li>
+                        <li><Emphasis text={point} /></li>
                       ))}
                     </ul>
                     <ul class="tag-list">
@@ -107,7 +108,7 @@ import { education, additionalLearning } from '../../data/education';
                 </div>
                 <ul class="tab-card__list">
                   {role.highlights.map((point) => (
-                    <li>{point}</li>
+                    <li><Emphasis text={point} /></li>
                   ))}
                 </ul>
                 <ul class="tag-list">

@@ -438,6 +438,12 @@ main {
   margin-top: 0;
 }
 
+.skill-card__label {
+  margin: 1rem 0 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
 @media (max-width: 40rem) {
   .skill-grid {
     grid-template-columns: 1fr;
@@ -646,6 +652,10 @@ main {
 
 .tab-card__list li {
   margin-bottom: 0.5em;
+}
+
+.tab-card__list strong {
+  font-weight: 600;
 }
 
 .tab-card__list:last-child,
