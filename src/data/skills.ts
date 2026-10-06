@@ -1,8 +1,6 @@
 export type SkillCategory = {
   name: string;
   tools: string[];
-  /** Tools known through coursework and projects rather than professional use; listed under a separate label. */
-  academic?: string[];
 };
 
 export const skillCategories: SkillCategory[] = [
@@ -20,9 +18,11 @@ export const skillCategories: SkillCategory[] = [
       'Forecasting',
       'scikit-learn',
       'LightGBM',
+      'TensorFlow',
+      'PyTorch',
+      'Keras',
       'Simulation',
     ],
-    academic: ['TensorFlow', 'PyTorch', 'Keras'],
   },
   {
     name: 'Data & Analytics Engineering',
