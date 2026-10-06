@@ -19,6 +19,8 @@ export const technicalToolkit: string[] = [
   'Power BI',
   'Causal Inference',
   'Machine Learning',
+  'LLM Integration',
+  'Embeddings',
   'LLM-Assisted Development',
 ];
 

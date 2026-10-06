@@ -42,7 +42,19 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    name: 'AI-Assisted Development',
-    tools: ['Claude Code', 'Codex', 'Google Antigravity', 'LLM-Assisted Workflows'],
+    name: 'LLM Applications & AI-Assisted Development',
+    tools: [
+      'Gemini API',
+      'Sentence Transformers',
+      'ChromaDB',
+      'Embeddings',
+      'Structured LLM Outputs',
+      'Pydantic',
+      'Streamlit',
+      'Claude Code',
+      'Codex',
+      'Google Antigravity',
+      'LLM-Assisted Workflows',
+    ],
   },
 ];
